@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wardrobe of Four Sheep</title>
+        <link rel="stylesheet" href="style.css">
+        </head>
+    <body>
+        <div id="main-container"  class="container">
+            <div class="group-btn">
+                <button onclick="resetCharacter()">
+                    <img src="assets/button/reset.png" alt="Reset Image">
+                </button>
+                <button onclick="saveCharacter()">
+                    <img src="assets/button/save.png" alt="Save Image">
+                </button>
+            </div>
+            <!-- Canvas chính -->
+            <div id="canvas-container" class="canvas">
+                <canvas id="character-canvas"></canvas>
+            </div>
+            <!-- Danh mục lựa chọn -->
+            <div id="main-canvas" >
+                <div id="category-menu" class="menu">
+                    <button onclick="selectCategory('skin')">
+                        <img src="assets/button/skin.png">
+                    </button>
+                    <button onclick="selectCategory('hair')">
+                        <img src="assets/button/front_hair.png">
+                    </button>
+                    <button onclick="selectCategory('back-hair')">
+                        <img src="assets/button/back_hair.png">
+                    </button>
+                    <button onclick="selectCategory('face')">
+                        <img src="assets/button/Emotion.png">
+                    </button>
+                    <button onclick="selectCategory('clothing')">
+                        <img src="assets/button/clothing.png">
+                    </button>
+                    <button onclick="selectCategory('accessory')">
+                        <img src="assets/button/details.png">
+                    </button>
+                    <button onclick="selectCategory('foreground')">
+                        <img src="assets/button/foreground.png">
+                    </button>
+                    <button onclick="selectCategory('background')">
+                        <img src="assets/button/background.png">
+                    </button>
+                </div>
+            </div>
+            <!-- Menu trang phục -->
+            <div id="clothing-menu" class="menu-container hidden item">
+                <!-- Hiển thị các tùy chọn trang phục cho từng danh mục -->
+            </div>
+        </div>          
+        <div id="background-container">
+            <img id="background-img" src="assets/ygWIbUZz.gif" alt="Animated Background">
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
