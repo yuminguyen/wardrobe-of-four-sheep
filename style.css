@@ -89,7 +89,7 @@ body, html{
 
 .item{
     background-color: #ffffff59;
-    width: 50vh; /* Chiều rộng của menu quần áo */
+    width: 50vh;
     height: 36vh;
 }
 
@@ -107,9 +107,9 @@ body, html{
 
 #category-menu button img{
     position: absolute;
+    object-fit: contain;
     width: 12.5vh;
     height: 5.7vh;
-    object-fit: contain;
     top: -0.3vh;
     right: -0.3vh;
 }
@@ -128,8 +128,8 @@ body, html{
 }
 
 #clothing-menu{
-    width: 50vh; /* Chiều rộng của menu quần áo */
-    height: 36vh;
+    width: 50vh;
+    height: 36vh; 
     overflow-x: hidden; /* Cho phép cuộn ngang */
     overflow-y: auto; /* Ẩn cuộn dọc */
     border: 0.05vh solid #ddd; /* Viền xám nhạt */
@@ -174,18 +174,18 @@ body, html{
     display: none;
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     .container {
         height: 100vh;
         width: 58vh;
     }
     .group-btn{
-        top: 36vh;
+        top: 44vh;
         right: 2vh;
     }
     .canvas{
-        width: 58vh;
         height: 58vh;
+        width: 58vh;
     }
     #category-menu{
         width: 58vh;
@@ -193,24 +193,24 @@ body, html{
     }
     .item{
         width: 58vh;
-        height: 36vh;
+        height: 38vh;
     }
     #category-menu button{
-        width: 12vh;
-        height: 5.7vh;
+        width: 13.9vh;
+        height: 6vh;
     }
     #category-menu button img{
-        width: 12.5vh;
-        height: 5.7vh;
-        top: -0.3vh;
-        right: -0.3vh;
+        width: 15vh;
+        height: 6.5vh;
+        top: -0.5vh;
+        right: -0.7vh;
     }
     #clothing-menu{
-        width: 50vh;
-        height: 36vh;
+        width: 58vh;
+        height: 38vh;
     }
     .clothing-item{
-        width: 11.7vh;
-        height: 11.7vh;
+        width: 13.5vh;
+        height: 13.5vh;
     }
-} */
+}
