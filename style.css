@@ -45,7 +45,7 @@ body, html{
 .container{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 95vh;
     width: 50vh;
     position: relative;
     border: 0.1vh solid #ccc; /* Thêm đường viền để dễ nhận biết */
@@ -173,3 +173,44 @@ body, html{
 .hidden{
     display: none;
 }
+
+/* @media (min-width: 768px) {
+    .container {
+        height: 100vh;
+        width: 58vh;
+    }
+    .group-btn{
+        top: 36vh;
+        right: 2vh;
+    }
+    .canvas{
+        width: 58vh;
+        height: 58vh;
+    }
+    #category-menu{
+        width: 58vh;
+        height: 13.5vh;
+    }
+    .item{
+        width: 58vh;
+        height: 36vh;
+    }
+    #category-menu button{
+        width: 12vh;
+        height: 5.7vh;
+    }
+    #category-menu button img{
+        width: 12.5vh;
+        height: 5.7vh;
+        top: -0.3vh;
+        right: -0.3vh;
+    }
+    #clothing-menu{
+        width: 50vh;
+        height: 36vh;
+    }
+    .clothing-item{
+        width: 11.7vh;
+        height: 11.7vh;
+    }
+} */
