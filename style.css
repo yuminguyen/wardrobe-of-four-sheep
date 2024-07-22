@@ -89,6 +89,8 @@ body, html{
 
 .item{
     background-color: #ffffff59;
+    width: 58vh; /* Chiều rộng của menu quần áo */
+    height: 29vh;
 }
 
 #category-menu button{
@@ -130,14 +132,12 @@ body, html{
 
 #clothing-menu{
     width: 58vh; /* Chiều rộng của menu quần áo */
-    max-width: 600px;
     height: 29vh;
-    max-height: 600px;
     overflow-x: hidden; /* Cho phép cuộn ngang */
     overflow-y: auto; /* Ẩn cuộn dọc */
-    border: 1px solid #ddd; /* Viền xám nhạt */
+    border: 0.4% solid #ddd; /* Viền xám nhạt */
     border-radius: 8px; /* Bo tròn các góc */
-    padding: 1px; /* Khoảng cách từ viền vào nội dung */
+    padding: 0.4%px; /* Khoảng cách từ viền vào nội dung */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -148,13 +148,13 @@ body, html{
     width: 13.7vh;
     height: 13.7vh;
     cursor: pointer;
-    margin: 1px;
-    border: 1px solid #ddd;
+    margin: 0.2vh;
+    border: 0.1vh solid #ddd;
     transition: border-color 0.3s ease;
 }
 
 .clothing-item:hover{
-    border: 1px solid #ddd;
+    border: 0.1vh solid #ddd;
     border-color: rgb(255, 145, 0);
 }
 
