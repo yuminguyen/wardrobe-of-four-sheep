@@ -12,8 +12,8 @@ body, html{
 
 .group-btn{
     position: absolute; /* Đặt nhóm nút ở vị trí tuyệt đối */
-    top: 43vh;
-    right: 3vh;
+    top: 36vh;
+    right: 2vh;
     z-index: 10;    /* Đảm bảo nhóm nút nằm trên các phần tử khác */
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@ body, html{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 58vh;
+    width: 50vh;
     position: relative;
     border: 0.1vh solid #ccc; /* Thêm đường viền để dễ nhận biết */
 }
@@ -57,8 +57,8 @@ body, html{
 
 .canvas{  
     border-color: #cc4100;
-    width: 58vh;
-    height: 58vh;
+    width: 50vh;
+    height: 50vh;
 }
 
 #character-canvas{
@@ -75,7 +75,7 @@ body, html{
 }
 
 #category-menu{
-    width: 58vh;
+    width: 50vh;
     height: 13.5vh;
     overflow-x: hidden; 
     overflow-y: auto; 
@@ -89,13 +89,13 @@ body, html{
 
 .item{
     background-color: #ffffff59;
-    width: 58vh; /* Chiều rộng của menu quần áo */
-    height: 29vh;
+    width: 50vh; /* Chiều rộng của menu quần áo */
+    height: 36vh;
 }
 
 #category-menu button{
-    width: 13.8vh;
-    height: 5.9vh;
+    width: 12vh;
+    height: 5.7vh;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
     position: relative;
@@ -107,11 +107,11 @@ body, html{
 
 #category-menu button img{
     position: absolute;
-    width: 14.5vh;
-    height: 6.5vh;
+    width: 12.5vh;
+    height: 5.7vh;
     object-fit: contain;
-    top: -0.5vh;
-    right: -0.5vh;
+    top: -0.3vh;
+    right: -0.3vh;
 }
 
 #category-menu button:active{
@@ -128,8 +128,8 @@ body, html{
 }
 
 #clothing-menu{
-    width: 58vh; /* Chiều rộng của menu quần áo */
-    height: 29vh;
+    width: 50vh; /* Chiều rộng của menu quần áo */
+    height: 36vh;
     overflow-x: hidden; /* Cho phép cuộn ngang */
     overflow-y: auto; /* Ẩn cuộn dọc */
     border: 0.05vh solid #ddd; /* Viền xám nhạt */
@@ -141,8 +141,8 @@ body, html{
 }
 
 .clothing-item{
-    width: 13.7vh;
-    height: 13.7vh;
+    width: 11.7vh;
+    height: 11.7vh;
     cursor: pointer;
     margin: 0.2vh;
     border: 0.1vh solid #ddd;
