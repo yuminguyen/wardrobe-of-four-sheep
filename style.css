@@ -12,8 +12,8 @@ body, html{
 
 .group-btn{
     position: absolute; /* Đặt nhóm nút ở vị trí tuyệt đối */
-    top: 43%;
-    right: 5%;
+    top: 43vh;
+    right: 3vh;
     z-index: 10;    /* Đảm bảo nhóm nút nằm trên các phần tử khác */
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ body, html{
     border-color: #cc5e2b;
     padding: 0;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 10vh;
     transition: transform 0.2s;
     width: 6vh;
     height: 6vh;
@@ -39,7 +39,7 @@ body, html{
 
 .group-btn button:hover {
     transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.3);
 }
 
 .container{
@@ -48,7 +48,7 @@ body, html{
     height: 100vh;
     width: 58vh;
     position: relative;
-    border: 1px solid #ccc; /* Thêm đường viền để dễ nhận biết */
+    border: 0.1vh solid #ccc; /* Thêm đường viền để dễ nhận biết */
 }
 
 .canvas, .menu, .item{
@@ -67,8 +67,8 @@ body, html{
 }
 
 .menu{
-    border: 1px solid #cc4100; 
-    border-color: #cc4100;
+    border: 0.05vh solid #ffdccb; 
+    border-color: #dddddd;
     width: 6vh;
     height: 58vh;
     display: flex;
@@ -79,8 +79,8 @@ body, html{
     height: 13.5vh;
     overflow-x: hidden; 
     overflow-y: auto; 
-    border: 1px solid #ddd;
-    padding-top: 0.8%;
+    border: 0.05vh solid #ddd;
+    padding-top: 0.4vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -98,7 +98,6 @@ body, html{
     height: 5.9vh;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
-    font-size: 16px;
     position: relative;
     overflow: hidden;
     border-color: #ff8a549f;
@@ -111,15 +110,13 @@ body, html{
     width: 14.5vh;
     height: 6.5vh;
     object-fit: contain;
-    top: -3.5%;
-    right: 49%;
-    transform: translateY(-50%);
-    transform: translateX(50%);
+    top: -0.5vh;
+    right: -0.5vh;
 }
 
 #category-menu button:active{
     transform: scale(0.95);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.3);
 }
 
 #category-menu button:hover {
@@ -127,7 +124,7 @@ body, html{
     border-color: rgba(0, 0, 0, 0.5);
     color: #333;
     transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.3);
 }
 
 #clothing-menu{
@@ -135,9 +132,8 @@ body, html{
     height: 29vh;
     overflow-x: hidden; /* Cho phép cuộn ngang */
     overflow-y: auto; /* Ẩn cuộn dọc */
-    border: 0.4% solid #ddd; /* Viền xám nhạt */
-    border-radius: 8px; /* Bo tròn các góc */
-    padding: 0.4%px; /* Khoảng cách từ viền vào nội dung */
+    border: 0.05vh solid #ddd; /* Viền xám nhạt */
+    padding: 0.3vh; /* Khoảng cách từ viền vào nội dung */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
