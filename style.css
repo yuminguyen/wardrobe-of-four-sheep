@@ -42,6 +42,38 @@ body, html{
     box-shadow: 0 0 2vh rgba(0, 0, 0, 0.3);
 }
 
+.tooltip{
+    visibility: hidden;
+    width: 10vh;
+    background-color: rgb(255, 185, 127);
+    color: rgb(255, 0, 0);
+    text-align: center;
+    border-radius: 0.6vh;
+    padding: 0.5vh 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vh;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.group-btn button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.top-tooltip{
+    bottom: 110%;
+    margin-bottom: 0.5vh;
+}
+
+.bottom-tooltip{
+    top: 110%;
+    margin-top: 0.5vh;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -180,7 +212,7 @@ body, html{
         width: 58vh;
     }
     .group-btn{
-        top: 44vh;
+        top: 36vh;
         right: 2vh;
     }
     .canvas{

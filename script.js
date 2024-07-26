@@ -84,7 +84,7 @@ function loadClothingOption(category){
         };
 
         //Click lần nữa để xóa lựa chọn
-        img.ondblclick = () => {
+        img.ondbclick = () => {
             if (category === 'skin' && selectSkin === itemSrc){
                 selectSkin = null;
             } else if (category === 'face' && selectClothing === itemSrc) {
@@ -225,9 +225,19 @@ function redrawCharacter(){
         };
     }
 
+    //Vẽ back-hair nếu có
+    if(selectBackHair){
+        const backHairImg = new Image();
+        backHairImg.src = selectBackHair;
+        backHairImg.onload = () => {
+            ctx.drawImage(backHairImg, 0, 0, canvas.width, canvas.height);
+        };
+    }
+
     //Vẽ nhân vật
     if (baseCharacterLoaded) {
         ctx.drawImage(baseCharacterImage, 0, 0, canvas.width, canvas.height);
+
         if(selectSkin){
             const skinImage = new Image();
             skinImage.src = selectSkin;
@@ -255,13 +265,6 @@ function redrawCharacter(){
             hairImage.src = selectHair;
             hairImage.onload = () => {
                 ctx.drawImage(hairImage, 0, 0, canvas.width, canvas.height);
-            };
-        }
-        if (selectBackHair) {
-            const backHairImage = new Image();
-            backHairImage.src = selectBackHair;
-            backHairImage.onload = () => {
-                ctx.drawImage(backHairImage, 0, 0, canvas.width, canvas.height);
             };
         }
         if (selectAccessory) {
@@ -305,6 +308,43 @@ function resetCharacter() {
     selectAccessory = null;
     selectBackground = null;
     selectForeground = null;
+}
+
+function loadImage(src){
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error('Tải ảnh ${src} thất bại!'));
+    });
+}
+
+function randomCharacter(){
+    const categories = {
+        'background':['assets/backgrounds/background1.png', 'assets/backgrounds/background2.png', 'assets/backgrounds/background3.png','assets/backgrounds/background4.png', 'assets/backgrounds/background5.png', 'assets/backgrounds/background6.jpg', 'assets/backgrounds/background7.jpg', 'assets/backgrounds/background8.png', 'assets/backgrounds/background10.jpg', 'assets/backgrounds/background11.jpg'],
+        'back-hair':['assets/clothing/back-hairs/Phong_hair_normal2.png', 'assets/clothing/back-hairs/Phong_hair_ponytail2.png'],
+        'skin':['assets/clothing/skins/Phong_skin.png', 'assets/clothing/skins/Le_skin.png', 'assets/clothing/skins/Liz_skin.png', 'assets/clothing/skins/Cus_skin.png'],
+        'face':['assets/clothing/faces/Phong_normal.png', 'assets/clothing/faces/Phong_happy.png', 'assets/clothing/faces/Phong_angry.png', 'assets/clothing/faces/Phong_regret.png', 'assets/clothing/faces/Phong_sad.png', 'assets/clothing/faces/Phong_shy.png', 'assets/clothing/faces/Phong_surprised.png', 'assets/clothing/faces/Le_normal.png', 'assets/clothing/faces/Le_angry.png', 'assets/clothing/faces/Le_sad.png', 'assets/clothing/faces/Le_shy.png', 'assets/clothing/faces/Le_surprised.png', 'assets/clothing/faces/Liz_emotion_normal.png', 'assets/clothing/faces/Liz_emotion_angry.png', 'assets/clothing/faces/Liz_emotion_sad.png', 'assets/clothing/faces/Liz_emotion_shy.png', 'assets/clothing/faces/Liz_emotion_smile.png', 'assets/clothing/faces/Liz_emotion_suprised.png', 'assets/clothing/faces/Cus_emotion_normal.png', 'assets/clothing/faces/Cus_emotion_angry.png', 'assets/clothing/faces/Cus_emotion_sad.png', 'assets/clothing/faces/Cus_emotion_smile.png', 'assets/clothing/faces/Cus_emotion_surprised.png'],
+        'clothing':['assets/clothing/clothings/Phong_clothing_normal.png','assets/clothing/clothings/Phong_clothing_hoodie.png','assets/clothing/clothings/Phong_clothing_summer.png','assets/clothing/clothings/Phong_clothing_wedding.png','assets/clothing/clothings/Phong_clothing_winter.png', 'assets/clothing/clothings/Le_clothing_normal.png', 'assets/clothing/clothings/Le_clothing_summer.png', 'assets/clothing/clothings/Le_clothing_wedding.png', 'assets/clothing/clothings/Le_clothing_winter.png', 'assets/clothing/clothings/Liz_clothing_normal.png', 'assets/clothing/clothings/Liz_clothing_shirt.png', 'assets/clothing/clothings/Liz_clothing_summer.png', 'assets/clothing/clothings/Liz_clothing_vest.png', 'assets/clothing/clothings/Liz_clothing_wedding.png', 'assets/clothing/clothings/Liz_clothing_winter.png', 'assets/clothing/clothings/Liz_clothing_wool.png', 'assets/clothing/clothings/Cus_clothing_normal.png', 'assets/clothing/clothings/Cus_clothing_summer.png', 'assets/clothing/clothings/Cus_clothing_wedding.png', 'assets/clothing/clothings/Cus_clothing_wool.png', 'assets/clothing/clothings/Cus_winter_summer.png'],
+        'hair':['assets/clothing/hairs/Phong_hair_normal.png', 'assets/clothing/hairs/Phong_hair_ponytail.png', 'assets/clothing/hairs/Phong_hair_short.png', 'assets/clothing/hairs/Le_ normal.png', 'assets/clothing/hairs/Le_ponytail.png', 'assets/clothing/hairs/Le_wedding.png', 'assets/clothing/hairs/Liz_hair_normal.png', 'assets/clothing/hairs/Liz_hair_custom.png', 'assets/clothing/hairs/Cus_hair_normal.png', 'assets/clothing/hairs/Cus_hair_braidedbelt.png'],
+        'accessory':['assets/clothing/accessories/strawhat.png', 'assets/clothing/accessories/bouquet.png', 'assets/clothing/accessories/hat.png'],
+        'foreground':['assets/clothing/foregrounds/sparkle.png', 'assets/clothing/foregrounds/heart.png', 'assets/clothing/foregrounds/mark.png', 'assets/clothing/foregrounds/point.png', 'assets/clothing/foregrounds/sad.png']
+    };
+
+    selectBackground = randomItem(categories['background']);
+    selectBackHair = randomItem(categories['back-hair']);
+    selectSkin = randomItem(categories['skin']);
+    selectFace = randomItem(categories['face']);
+    selectClothing = randomItem(categories['clothing']);
+    selectHair = randomItem(categories['hair']);
+    selectAccessory = randomItem(categories['accessory']);
+    selectForeground = randomItem(categories['foreground']);
+
+    redrawCharacter();
+}
+
+function randomItem(items){
+    return items[Math.floor(Math.random()*items.length)];
 }
 
 window.onload = () => {
